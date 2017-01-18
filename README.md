@@ -26,11 +26,9 @@ tween:'linear', //支持 linear ease-in ease-out ease-in-out 默认ease-in-out
 pluse:'false', // 是否增量旋转 默认false
 ```  
 `callback` 回调   
-```
 callback:function(){ //回调
     console.log('callback')
   }
-```  
 
 # 方法  
 `setDef()` 设置属性值  
