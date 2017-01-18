@@ -12,6 +12,7 @@ function mobileRotate(obj){
     el : '', //el元素
     speed : 1, // 速度
     angle : 360, // 角度
+    random : false, //随机数
     time : 2000,// 持续时间
     pluse : false, //增量旋转
     tween : 'ease-in-out',
@@ -27,6 +28,10 @@ function mobileRotate(obj){
   }
   // 设置时间
   d = def.time;
+  // 分割随机数
+  if(def.random != false){
+    def.random = def.random.split(",");
+  }
   // 原型链
   that.pro = mobileRotate.prototype;
   // 获取旋转角度 传入旋转元素的style
@@ -66,6 +71,9 @@ function mobileRotate(obj){
       isRotate = false;
     }else{
       return false;
+    }
+    if(def.random != false){
+      def.angle = that.random(def.random[0],def.random[1])
     }
     // 判定和获取el中的角度
     elAngle = that.getRotate();
@@ -135,6 +143,10 @@ function mobileRotate(obj){
   // console
   that.pro.cle = function(c){
     console.log('mobileRotate.js: ' + c);
+  }
+  // 随机数
+  that.pro.random = function(n, m){
+    return (parseInt(n) + Math.floor(Math.random() * ((parseInt(m) + 1) - n)))
   }
   //tween
   that.pro.tween = function(t, b, c, d){
