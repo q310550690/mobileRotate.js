@@ -2,7 +2,7 @@
 移动端rotate插件，支持IOS，安卓同IOS一样流畅
 
 # 实例
-```javascript
+```
 var test = new mobileRotate({  
   el:'#zhuanpanBg > img',
   angle:'1500', //旋转角度 默认360
