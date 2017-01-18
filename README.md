@@ -1,5 +1,5 @@
 # mobileRotate.js
-移动端rotate插件，支持IOS，安卓同IOS一样流畅
+移动端rotate插件，支持IOS，安卓，安卓同IOS一样流畅
 
 # 实例
 ```javascript
