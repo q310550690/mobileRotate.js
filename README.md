@@ -1,6 +1,10 @@
 # mobileRotate.js
 移动端rotate插件，支持IOS，安卓，安卓同IOS一样流畅
-
+# 属性  
+`el` 选择器  
+```
+el:'#zhuanpanBg > img', // 必选element
+```
 # 实例
 ```javascript
 var test = new mobileRotate({  
