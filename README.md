@@ -4,9 +4,10 @@
 # 实例
 ```javascript
 var test = new mobileRotate({  
-  el:'#zhuanpanBg > img',
-  angle:'1500', //旋转角度 默认360
-  time:'2000', //旋转时间 默认2000ms
+  el:'#zhuanpanBg > img', // 必选element
+  angle:'1400', //旋转角度 默认360
+  random:'600,1400',//设置随机数,默认false,设置随机数会覆盖angle的值
+  time:'2000', //旋转时间 默认2000ms
   tween:'linear', //支持 linear ease-in ease-out ease-in-out 默认ease-in-out
   pluse:'false', // 是否增量旋转 默认false
   callback:function(){ //回调
