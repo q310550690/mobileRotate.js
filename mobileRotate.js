@@ -165,4 +165,13 @@ function mobileRotate(obj){
         break;
     }
   }
+
+  // 方法
+  that.pro.setDef = function(obj){
+    if (obj != "") {
+      for (var i in obj) {
+        def[i] = obj[i];
+      }
+    }
+  }
 }
