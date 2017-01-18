@@ -31,6 +31,7 @@ callback:function(){ //回调
     console.log('callback')
   }
 ```  
+
 # 方法  
 `setDef()` 设置属性值  
 ```
@@ -39,6 +40,7 @@ test.setDef({
     ...
   })
 ```  
+
 # 实例
 ```javascript
 var test = new mobileRotate({  
