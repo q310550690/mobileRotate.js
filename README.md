@@ -19,4 +19,5 @@ $('#test2').on('touchend', function(){
 ```
 
 # 手机实例
-http://km2.kmguguan.com/Xz/xincheng/2017/1.17.2/index.html
+http://km2.kmguguan.com/Xz/xincheng/2017/1.17.2/index.html  
+![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
