@@ -2,31 +2,31 @@
 移动端rotate插件，支持IOS，安卓，安卓同IOS一样流畅
 # 属性  
 `el` 选择器 (必需)  
-```
+```javascript
 el:'#zhuanpanBg > img', // 必选element
 ```  
 `angle` 旋转角度   
-```
+```javascript
 angle:'1400', //旋转角度 默认360
 ```  
 `random` 随机数   
-```
+```javascript
 random:'600,1400',//设置随机数,默认false,设置随机数会覆盖angle的值
 ```  
 `time` 持续时间   
-```
+```javascript
 time:'2000', //旋转时间 默认2000ms
 ```  
 `tween` 缓动    
-```
+```javascript
 tween:'linear', //支持 linear ease-in ease-out ease-in-out 默认ease-in-out
 ```  
 `pluse` 增量  
-```
+```javascript
 pluse:'false', // 是否增量旋转 默认false
 ```  
 `callback` 回调   
-```
+```javascript
 callback:function(){ //回调
     console.log('callback')
   }
@@ -34,7 +34,7 @@ callback:function(){ //回调
 
 # 方法  
 `setDef()` 设置属性值  
-```
+```javascript
 test.setDef({
     angle:dd,
     ...
