@@ -79,7 +79,7 @@ function mobileRotate(obj){
     elAngle = that.getRotate();
     if(that.getUa() == 'iphone'){
       // 持续时间
-      var sportD = d / intTime;
+      var sportD = parseInt(d / intTime);
       // 变化量c
       var sportC = def.angle;
       // 开始时间T
