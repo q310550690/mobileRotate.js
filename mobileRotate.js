@@ -97,7 +97,8 @@ function mobileRotate(obj){
             sportC = ((360 + parseFloat(elAngle[3])) - parseFloat(elAngle[3]));
             sportB = parseFloat(elAngle[3]) % 360;
           }else{
-            sportC = def.angle - (parseFloat(elAngle[3]) % 360);
+            //sportC = def.angle - (parseFloat(elAngle[3]) % 360);
+            sportC = def.angle;
             sportB = parseFloat(elAngle[3]) % 360;
           }
         }
@@ -126,13 +127,14 @@ function mobileRotate(obj){
           if(def.angle <= 360){
             sportAngle = 360 + (parseFloat(elAngle[3]) + parseFloat(def.angle)) - (parseFloat(def.angle) % 360);
           }else{
-            sportAngle = (parseFloat(elAngle[3]) + parseFloat(def.angle)) - (parseFloat(def.angle) % 360);
+            //sportAngle = (parseFloat(elAngle[3]) + parseFloat(def.angle)) - (parseFloat(def.angle) % 360);
+            sportAngle = (parseFloat(elAngle[3]) + parseFloat(def.angle));
           }
         }
       }else{
         sportAngle = def.angle;
       }
-      console.log(sportAngle)
+      //console.log(sportAngle)
       that.select().setAttribute('style','transform:rotate(' + sportAngle + 'deg);transition:all '+ def.time +'ms '+ def.tween +';')
       setTimeout(function(){
         isRotate = true;
