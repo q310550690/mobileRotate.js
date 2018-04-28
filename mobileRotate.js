@@ -17,6 +17,7 @@ function mobileRotate(obj) {
 		isRandom = true, // 随机数是否正确
 		oldAngle = 360, // 存储上一次旋转的值
 		elAngle = '', //el中的角度
+		timer = '',//定时器
 		def = { //默认参数
 			el: '', //el元素
 			speed: 1, // 速度 仅对ios有效
@@ -97,6 +98,22 @@ function mobileRotate(obj) {
 			return "iphone";
 		}
 	}
+	// 复位
+	that.pro.reset = function (cb) {
+		if (that.getUa() == 'iphone') {
+			oldAngle = 360;
+			that.select().setAttribute('style', 'transform:rotate(0deg)');
+			clearInterval(timer);
+		} else {
+			oldAngle = 0;
+			that.select().setAttribute('style', 'transform:rotate(0deg);transition:all 0ms')
+		}
+		if(typeof cb == 'function'){
+			cb();
+		}else{
+			console.log('回调不是一个有效的function')
+		}
+	}
 	// 旋转
 	that.pro.rotate = function () {
 		// 判定随机数是否正确
@@ -163,10 +180,10 @@ function mobileRotate(obj) {
 					that.select().setAttribute('style', 'transform:rotate(' + sportAngle + 'deg)')
 				}
 			}
-			var timer = setInterval(sport, intTime);
+			timer = setInterval(sport, intTime);
 		} else {
 			// 判定旋转之前是否复位
-			if(def.beforeReset){
+			if (def.beforeReset) {
 				oldAngle = 0;
 			}
 			// 判定之前是否旋转过了
@@ -208,12 +225,10 @@ function mobileRotate(obj) {
 			setTimeout(function () {
 				isRotate = true;
 				def.callback();
-				// 判定是否复位
+				// 判定旋转完后是否复位
 				if (def.afterReset) {
-					setTimeout(function () {
-						oldAngle = 0;
-						that.select().setAttribute('style', 'transform:rotate(0deg);transition:all 0ms;')
-					}, 30)
+					oldAngle = 0;
+					that.select().setAttribute('style', 'transform:rotate(0deg);transition:all 0ms;')
 				}
 			}, def.time)
 		}
