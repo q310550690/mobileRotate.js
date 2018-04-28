@@ -1,3 +1,10 @@
+/**
+ * 
+ * @param {*} obj 默认参数
+ * @author 变异小僵尸
+ * @version 0.0.1
+ * 
+ */
 function mobileRotate(obj){
   var that = this;
   // 默认参数
