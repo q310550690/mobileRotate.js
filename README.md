@@ -32,7 +32,7 @@ tween:'linear', //接受参数 linea | ease-in | ease-out | ease-in-out 默认ea
 ```  
 `turn` 旋转圈数  
 ```javascript
-turn:0, // 区间值，会加上angle的值 360*(1|5) + angle 接受值 2(旋转圈数，0和false效果想吐) | false | '1,5'(表示1~5随机转)
+turn:0, // 区间值，会加上angle的值 360*(1|5) + angle 接受值 2(旋转圈数，0和false效果相同) | false | '1,5'(表示1~5随机转)
 ```  
 `callback` 回调   
 ```javascript
