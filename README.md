@@ -75,7 +75,6 @@ var test = new mobileRotate({
 $('#test2').on('touchend', function(){
   test.setDef({
     angle:60,
-
   })
   test.rotate();
 })
