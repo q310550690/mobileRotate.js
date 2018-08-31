@@ -2,7 +2,7 @@
  * 
  * @param {*} obj 默认参数
  * @author 变异小僵尸
- * @version 0.0.2
+ * @version 0.0.3 // fix 修复一些BUG
  * 
  */
 function mobileRotate(obj) {
@@ -16,6 +16,7 @@ function mobileRotate(obj) {
 		isRotate = true, // 是否可以旋转
 		isRandom = true, // 随机数是否正确
 		oldAngle = 360, // 存储上一次旋转的值
+		turn = 0, // 存储上一次旋转圈数
 		elAngle = '', //el中的角度
 		timer = '',//定时器
 		def = { //默认参数
@@ -76,7 +77,9 @@ function mobileRotate(obj) {
 		}
 		// 分割随机圈数
 		if (def.turn != false) {
-			def.turn = def.turn.split(",");
+			if(typeof(def.turn) == "string"){
+				turn = def.turn.split(",");
+			}
 		}
 	}
 	// 分割随机数、圈数
@@ -128,19 +131,19 @@ function mobileRotate(obj) {
 			return false;
 		}
 		// 获取随机的圈数
-		if (def.turn != false) {
-			if (def.turn instanceof Array) {
-				if (def.turn.length == 2) {
-					def.turn = that.random(def.turn[0], def.turn[1])
-				} else if (def.turn.length == 1) {
-					def.turn = def.turn[0];
+		if (turn != false) {
+			if (turn instanceof Array) {
+				if (turn.length == 2) {
+					turn = that.random(turn[0], turn[1])
+				} else if (turn.length == 1) {
+					turn = turn[0];
 				} else {
 					console.log('turn 配置参数不正确 请输入与 "1,5" 或 "1"');
 					return false;
 				}
 			}
 		}
-		var turnAngle = def.turn * 360, // 旋转圈数增量角度
+		var turnAngle = turn * 360, // 旋转圈数增量角度
 			sportAngle = ''; //最终旋转结果
 		// 判定和获取el中的角度
 		elAngle = that.getRotate();
@@ -165,7 +168,7 @@ function mobileRotate(obj) {
 				//每次运行函数使t的值增加speed
 				sportT += def.speed;
 				//当t追赶到tweend 之后清除定时器并回调
-				if (sportT == sportD) {
+				if ((sportT - sportD) >= 1) {
 					clearInterval(timer);
 					isRotate = true;
 					def.callback();
